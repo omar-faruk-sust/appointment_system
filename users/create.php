@@ -1,5 +1,10 @@
 <?php
+    session_start();
+
     include "../config/database.php";
+    include "../config/helper.php";
+
+    isLoggedIn();
 
     if($_SERVER['REQUEST_METHOD'] == "POST") {
         $name = $_POST['name'];
@@ -15,7 +20,6 @@
         } else {
             echo "Error: $connection->error";
         }
-
     }
 ?>
 
